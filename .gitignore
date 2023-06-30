@@ -1,0 +1,11 @@
+#ignore all logs
+*.log
+*.tlog
+
+#ignore all vs files
+*.vs
+
+#ignore all files in Debug
+FlugstreckeDrohne/Debug
+FlugstreckeDrohne/x64/Debug
+x64/Debug

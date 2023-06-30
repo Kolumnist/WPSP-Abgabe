@@ -33,7 +33,7 @@ int main()
 
 	WayPointContainer* origin_container = new WayPointContainer();
 
-	for (int i = 0; i < 18; i++)
+	for (int i = 0; i < 18; ++i)
 	{
 		origin_container->add(*waypoints[i]);
 	}
@@ -49,20 +49,23 @@ int main()
 
 
 	std::cout << "----------------------------\n"
-		<< "With assignment operator ctor\n"
+		<< "With assignment operator\n"
 		<< "----------------------------" << std::endl;
 
 	WayPointContainer assignment_container = *origin_container;
 	assignment_container.print();
 
+	// END OF NORMAL MESSAGE
+	// BEGIN OF TESTING STUFF
 
 	WayPoint* p = new WayPoint();
 	origin_container->add(*p);
 
-
 	waypoints[0]->latitude(10.0);
+
 	std::cout << "\n\n\n\n\n" << std::endl;
 	origin_container->print();
+	delete origin_container;
 	copy_container.print();
 	assignment_container.print();
 
